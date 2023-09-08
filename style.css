@@ -1,0 +1,839 @@
+/* Mengimpor font Montserrat dari Google Fonts */
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+/* Reset CSS untuk menghilangkan padding, margin, dan box-sizing */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Konfigurasi font, ukuran dasar halaman, dan efek scroll halus */
+html {
+	font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+}
+
+/* Menghilangkan dekorasi tautan pada semua elemen anchor */
+a {
+	text-decoration: none;
+}
+
+/* Container dengan tinggi minimal 100vh (viewport height) */
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Konfigurasi tampilan gambar dengan object-fit */
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+/* Gaya teks paragraf umum */
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
+}
+
+/* Judul bagian dengan gaya umum */
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+
+/* Warna khusus untuk span dalam judul */
+.section-title span {
+	color: crimson;
+}
+
+/* Gaya tombol tindakan (Call to Action - CTA) */
+.cta {
+	display: inline-block;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid crimson;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.3s ease;
+	transition-property: background-color, color;
+}
+
+/* Hover pada tombol tindakan (CTA) */
+.cta:hover {
+	color: white;
+	background-color: crimson;
+}
+
+/* Gaya teks merek (brand) */
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: white;
+}
+
+/* Warna khusus untuk span dalam teks merek (brand) */
+.brand h1 span {
+	color: crimson;
+}
+
+/* Gaya header dan navigasi */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+
+/* Gaya header bagian dalam */
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: 0.3s ease background-color;
+}
+
+/* Gaya baris navigasi */
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+
+/* Gaya daftar navigasi */
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
+}
+
+/* Gaya daftar navigasi aktif */
+#header .nav-list ul.active {
+	left: 0%;
+}
+
+/* Gaya tautan dalam daftar navigasi */
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+
+/* Gaya efek pada tautan dalam daftar navigasi saat hover */
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(240, 248, 255, 0.021);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+
+/* Gaya efek pada tautan dalam daftar navigasi saat hover */
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+
+/* Gaya tautan dalam daftar navigasi saat hover */
+#header .nav-list ul li:hover a {
+	color: crimson;
+}
+
+/* Gaya ikon hamburger */
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+
+/* Gaya efek pulsasi pada ikon hamburger */
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+
+/* Gaya batang pada ikon hamburger */
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+
+/* Gaya elemen sebelum dan sesudah pada batang ikon hamburger */
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+
+/* Gaya elemen sebelum pada batang ikon hamburger */
+#header .hamburger .bar::after {
+	top: 8px;
+}
+
+/* Gaya elemen sesudah pada batang ikon hamburger */
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+
+/* Gaya elemen sesudah pada batang ikon hamburger saat aktif */
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+
+/* Gaya elemen sebelum pada batang ikon hamburger saat aktif */
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+
+/* Gaya bagian hero */
+#hero {
+	background-image: url(./img/bg.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+}
+
+/* Gaya lapisan overlay pada bagian hero */
+#hero::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+/* Gaya elemen dalam bagian hero */
+#hero .hero {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 50px;
+	justify-content: flex-start;
+}
+
+/* Gaya judul dalam bagian hero */
+#hero h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s;
+}
+
+/* Animasi penampilan teks judul */
+#hero h1:nth-child(1) {
+	animation-delay: 1s;
+}
+#hero h1:nth-child(2) {
+	animation-delay: 2s;
+}
+#hero h1:nth-child(3) {
+	animation: text_reveal_name 0.5s ease forwards;
+	animation-delay: 3s;
+}
+
+/* Gaya elemen span dalam judul */
+#hero h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: crimson;
+	animation: text_reveal_box 1s ease;
+	animation-delay: 0.5s;
+}
+
+/* Animasi penampilan elemen span dalam judul */
+#hero h1:nth-child(1) span {
+	animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) span {
+	animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span {
+	animation-delay: 2.5s;
+}
+
+/* Gaya bagian layanan (services) */
+#services .services {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+/* Gaya bagian atas layanan */
+#services .service-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+/* Gaya bagian bawah layanan */
+#services .service-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+/* Gaya item layanan */
+#services .service-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(./img/img-1.png);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+/* Gaya lapisan overlay pada item layanan */
+#services .service-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: 0.9;
+	z-index: -1;
+}
+
+/* Gaya judul dalam item layanan */
+#services .service-item h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+/* Gaya teks dalam item layanan */
+#services .service-item p {
+	color: white;
+	text-align: left;
+}
+
+/* Gaya bagian proyek (projects) */
+#projects .projects {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+/* Gaya judul dalam bagian proyek */
+#projects .projects-header h1 {
+	margin-bottom: 50px;
+}
+
+/* Gaya semua proyek dalam bagian proyek */
+#projects .all-projects {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+/* Gaya item proyek */
+#projects .project-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+/* Gaya informasi proyek */
+#projects .project-info {
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	color: white;
+}
+
+/* Gaya judul proyek */
+#projects .project-info h1 {
+	font-size: 4rem;
+	font-weight: 500;
+}
+
+/* Gaya subjudul proyek */
+#projects .project-info h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	margin-top: 10px;
+}
+
+/* Gaya teks dalam proyek */
+#projects .project-info p {
+	color: white;
+}
+
+/* Gaya gambar proyek */
+#projects .project-img {
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+/* Gaya overlay pada gambar proyek */
+#projects .project-img:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: 0.7;
+}
+
+/* Gaya gambar proyek saat hover */
+#projects .project-item:hover .project-img img {
+	transform: scale(1.1);
+}
+
+/* Gaya bagian tentang (about) */
+#about .about {
+	flex-direction: column-reverse;
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 20px;
+}
+
+/* Gaya kolom kiri dalam bagian tentang */
+#about .col-left {
+	width: 250px;
+	height: 360px;
+}
+
+/* Gaya kolom kanan dalam bagian tentang */
+#about .col-right {
+	width: 100%;
+}
+
+/* Gaya judul dalam kolom kanan tentang */
+#about .col-right h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	margin-bottom: 10px;
+}
+
+/* Gaya teks dalam kolom kanan tentang */
+#about .col-right p {
+	margin-bottom: 20px;
+}
+
+/* Gaya tombol tindakan (CTA) dalam kolom kanan tentang */
+#about .col-right .cta {
+	color: black;
+	margin-bottom: 50px;
+	padding: 10px 20px;
+	font-size: 2rem;
+}
+
+/* Gaya gambar dalam kolom kiri tentang */
+#about .col-left .about-img {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	border: 10px solid white;
+}
+
+/* Gaya overlay pada gambar dalam kolom kiri tentang */
+#about .col-left .about-img::after {
+	content: '';
+	position: absolute;
+	left: -33px;
+	top: 19px;
+	height: 98%;
+	width: 98%;
+	border: 7px solid crimson;
+	z-index: -1;
+}
+
+/* Gaya bagian kontak (contact) */
+#contact .contact {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 90%;
+}
+
+/* Gaya elemen-elemen dalam bagian kontak */
+#contact .contact-items {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* Gaya item kontak */
+#contact .contact-item {
+	width: 80%;
+	padding: 20px;
+	text-align: center;
+	justify-content: center;
+	border-radius: 10px;
+	padding: 30px;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+	transition: 0.3s ease box-shadow;
+}
+
+/* Gaya item kontak saat hover */
+#contact .contact-item:hover {
+	box-shadow: 0px 0px 5px 0 #0000002c;
+}
+
+/* Gaya ikon dalam item kontak */
+#contact .icon {
+	width: 70px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+/* Gaya informasi kontak dalam item kontak */
+#contact .contact-info h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+/* Gaya teks informasi kontak dalam item kontak */
+#contact .contact-info h2 {
+	font-size: 1.3rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+
+/* Gaya footer */
+#footer {
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+/* Gaya bagian footer */
+#footer .footer {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+/* Gaya judul dalam footer */
+#footer h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Gaya ikon media sosial dalam footer */
+#footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+/* Gaya item media sosial dalam footer */
+#footer .social-item {
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+
+/* Gaya gambar media sosial dalam footer */
+#footer .social-item img {
+	filter: grayscale(1);
+	transition: 0.3s ease filter;
+}
+
+/* Gaya gambar media sosial dalam footer saat hover */
+#footer .social-item:hover img {
+	filter: grayscale(0);
+}
+
+/* Gaya teks dalam footer */
+#footer p {
+	color: white;
+	font-size: 1.3rem;
+}
+
+/* Animasi kunci (keyframes) */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+
+@keyframes text_reveal_name {
+	100% {
+		color: crimson;
+		font-weight: 500;
+	}
+}
+
+/* Media Query Untuk Tablet */
+@media only screen and (min-width: 768px) {
+	/* Gaya tombol CTA pada layar tablet */
+	.cta {
+		font-size: 2.5rem;
+		padding: 20px 60px;
+	}
+
+	/* Gaya judul bagian pada layar tablet */
+	h1.section-title {
+		font-size: 6rem;
+	}
+
+	/* Gaya judul dalam bagian hero pada layar tablet */
+	#hero h1 {
+		font-size: 7rem;
+	}
+
+	/* Gaya item layanan pada layar tablet */
+	#services .service-bottom .service-item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+
+	/* Gaya item proyek pada layar tablet */
+	#projects .project-item {
+		flex-direction: row;
+	}
+
+	/* Gaya item proyek pada layar tablet (item ganjil) */
+	#projects .project-item:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+
+	/* Gaya item proyek pada layar tablet */
+	#projects .project-item {
+		height: 400px;
+		margin: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	/* Gaya informasi proyek pada layar tablet */
+	#projects .all-projects .project-info {
+		flex-basis: 50%;
+		padding: 50px;
+	}
+
+	/* Gaya gambar proyek pada layar tablet */
+	#projects .project-img {
+		flex-basis: 50%;
+		height: 100%;
+	}
+
+	/* Gaya kolom kiri dalam bagian tentang pada layar tablet */
+	#about .col-left {
+		width: 100%;
+		height: 400px;
+	}
+
+	/* Gaya kolom kanan dalam bagian tentang pada layar tablet */
+	#about .col-right {
+		width: 100%;
+	}
+
+	/* Gaya gambar dalam kolom kiri tentang pada layar tablet */
+	#about .col-left .about-img {
+		border: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Gaya elemen span dalam judul pada layar tablet */
+	#hero h1 span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 0;
+		background-color: crimson;
+		animation: text_reveal_box 1s ease;
+		animation-delay: 0.5s;
+	}
+
+	/* Gaya elemen span dalam judul pada layar tablet */
+	#hero h1:nth-child(1) span {
+		animation-delay: 0.5s;
+	}
+	#hero h1:nth-child(2) span {
+		animation-delay: 1.5s;
+	}
+	#hero h1:nth-child(3) span {
+		animation-delay: 2.5s;
+	}
+}
+
+/* Media Query Untuk Desktop */
+@media only screen and (min-width: 1200px) {
+	/* Gaya judul bagian pada layar desktop */
+	h1.section-title {
+		font-size: 8rem;
+	}
+
+	/* Gaya judul dalam bagian hero pada layar desktop */
+	#hero h1 {
+		font-size: 10rem;
+	}
+
+	/* Gaya tombol CTA pada layar desktop */
+	.cta {
+		font-size: 3rem;
+		padding: 25px 80px;
+	}
+
+	/* Gaya item layanan pada layar desktop */
+	#services .service-item {
+		margin: 2.5%;
+		flex-basis: 30%;
+	}
+
+	/* Gaya item proyek pada layar desktop */
+	#projects .project-item {
+		height: 500px;
+		margin: 2.5%;
+		flex-basis: 45%;
+	}
+
+	/* Gaya informasi proyek pada layar desktop */
+	#projects .all-projects .project-info {
+		padding: 50px;
+	}
+
+	/* Gaya kolom kiri dalam bagian tentang pada layar desktop */
+	#about .col-left {
+		height: 500px;
+		width: 350px;
+	}
+
+	/* Gaya kolom kanan dalam bagian tentang pada layar desktop */
+	#about .col-right {
+		width: 100%;
+	}
+}

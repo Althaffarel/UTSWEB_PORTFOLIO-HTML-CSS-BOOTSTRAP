@@ -1,0 +1,237 @@
+<!DOCTYPE html> <!-- Deklarasi tipe dokumen HTML -->
+<html lang="en"> <!-- Mulai elemen HTML dengan bahasa Inggris -->
+
+<head> <!-- Awal bagian kepala dokumen HTML -->
+  <meta charset="UTF-8"> <!-- Pengaturan karakter set UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Konfigurasi tampilan untuk perangkat bergerak -->
+  <link rel="stylesheet" href="style.css"> <!-- Menghubungkan file CSS eksternal -->
+  <title>My Website</title> <!-- Menetapkan judul dokumen -->
+</head> <!-- Akhir bagian kepala dokumen HTML -->
+
+<body>
+  <!-- Bagian Header -->
+  <section id="header"> <!-- Mulai bagian Header dengan ID "header" -->
+    <div class="header container"> <!-- Kontainer untuk Header -->
+      <div class="nav-bar"> <!-- Baris navigasi di dalam Header -->
+        <div class="brand"> <!-- Bagian merk atau brand -->
+          <a href="#hero"> <!-- Tautan ke elemen dengan ID "hero" -->
+            <h1><span>A</span>rel <span>G</span>anteng</h1> <!-- Judul Header -->
+          </a>
+        </div>
+        <div class="nav-list"> <!-- Daftar navigasi -->
+          <div class="hamburger"> <!-- Icon hamburger untuk menu mobile -->
+            <div class="bar"></div> <!-- Garis-garis pada icon hamburger -->
+          </div>
+          <ul> <!-- Daftar menu navigasi -->
+            <li><a href="#hero" data-after="Home">Home</a></li> <!-- Tautan menu "Home" -->
+            <li><a href="#services" data-after="Partners">Partners</a></li> <!-- Tautan menu "Partners" -->
+            <li><a href="#projects" data-after="Portfolio">Portfolio</a></li> <!-- Tautan menu "Portfolio" -->
+            <li><a href="#about" data-after="About">About</a></li> <!-- Tautan menu "About" -->
+            <li><a href="#contact" data-after="Contact">Contact</a></li> <!-- Tautan menu "Contact" -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section> <!-- Akhir dari bagian Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero"> <!-- Awal dari bagian Hero dengan ID "hero" -->
+    <div class="hero container"> <!-- Kontainer untuk Hero -->
+      <div> <!-- Bagian konten dalam Hero -->
+        <h1>Halo, <span></span></h1> <!-- Judul pertama -->
+        <h1>Nama Saya <span></span></h1> <!-- Judul kedua -->
+        <h1>Arel  <span></span></h1> <!-- Judul ketiga -->
+        <a href="#projects" type="button" class="cta">Portfolio WEB</a> <!-- Tautan dengan kelas "cta" untuk menuju ke "Portfolio WEB" -->
+      </div>
+    </div>
+  </section> <!-- Akhir dari bagian Hero -->
+
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="services"> <!-- Awal dari bagian Services dengan ID "services" -->
+    <div class="services container"> <!-- Kontainer untuk Services -->
+      <div class="service-top"> <!-- Bagian atas layanan -->
+        <h1 class="section-title">Partners</h1> <!-- Judul bagian "Partners" -->
+        <p>Dalam pembuatan project-project saya, terdapat partner aplikasi yang membantu saya dalam pembuatannya. Sehingga memudahkan saya menyelesaikan project-project tersebut.</p> <!-- Teks penjelasan tentang partner aplikasi -->
+      </div>
+      <div class="service-bottom"> <!-- Bagian bawah layanan -->
+        <div class="service-item"> <!-- Item layanan -->
+          <div class="icon"><img src="./img/visual.png" /></div> <!-- Gambar ikon -->
+          <h2>Visual Studio Code</h2> <!-- Nama layanan "Visual Studio Code" -->
+          <p>
+            Visual Studio Code (VS Code)  merupakan sebuah teks editor ringan dan handal dibuat oleh Microsoft untuk sistem operasi multiplatform, yang artinya aplikasi VS Code dapat digunakan di sistem operasi Linux, Mac, dan Windows.</p> <!-- Deskripsi tentang Visual Studio Code -->
+        </div>
+      </div>
+  </section> <!-- Akhir dari bagian Services -->
+
+  <!-- End Service Section -->
+
+  <!-- Projects Section -->
+  <section id="projects"> <!-- Awal dari bagian Projects dengan ID "projects" -->
+    <div class="projects container"> <!-- Kontainer untuk Projects -->
+      <div class="projects-header"> <!-- Header bagian Projects -->
+        <h1 class="section-title">Recent <span>Projects</span></h1> <!-- Judul bagian "Recent Projects" -->
+      </div>
+      <div class="all-projects"> <!-- Semua proyek yang ditampilkan -->
+        <div class="project-item"> <!-- Item proyek pertama -->
+          <div class="project-info"> <!-- Informasi tentang proyek -->
+            <h1>Latihan 5</h1> <!-- Nama proyek "Latihan 5" -->
+            <h2>Sebuah project membuat Penjelasan CSS menggunakan HTML</h2> <!-- Deskripsi proyek -->
+            <p></p> <!-- Paragraf proyek (kosong) -->
+          </div>
+          <div class="project-img"> <!-- Gambar proyek -->
+            <img src="./img/latihan5.jpg" alt="img"> <!-- Sumber gambar -->
+          </div>
+        </div>
+        <div class="project-item"> <!-- Item proyek kedua -->
+          <div class="project-info"> <!-- Informasi tentang proyek -->
+            <h1>Latihan 6</h1> <!-- Nama proyek "Latihan 6" -->
+            <h2>Sebuah project membuat perkenalan dan ada fotonya menggunakan HTML.</h2> <!-- Deskripsi proyek -->
+          </div>
+          <div class="project-img"> <!-- Gambar proyek -->
+            <img src="./img/latihan6.jpg" alt="img"> <!-- Sumber gambar -->
+          </div>
+        </div>
+        <div class="project-item"> <!-- Item proyek ketiga -->
+          <div class="project-info"> <!-- Informasi tentang proyek -->
+            <h1>Latihan CSS</h1> <!-- Nama proyek "Latihan CSS" -->
+            <h2>Sebuah project membuat latihan HTML dan CSS, Jika nanti tombol di pencet maka akan masuk ke sebuah website.</h2> <!-- Deskripsi proyek -->
+          </div>
+          <div class="project-img"> <!-- Gambar proyek -->
+            <img src="./img/latihancss.jpg" alt="img"> <!-- Sumber gambar -->
+          </div>
+        </div>
+        <div class="project-item"> <!-- Item proyek keempat -->
+          <div class="project-info"> <!-- Informasi tentang proyek -->
+            <h1>Latihan Pseudo</h1> <!-- Nama proyek "Latihan Pseudo" -->
+            <h2>Sebuah project membuat tabel menggunakan HTML</h2> <!-- Deskripsi proyek -->
+          </div>
+          <div class="project-img"> <!-- Gambar proyek -->
+            <img src="./img/latihanpseudo.jpg" alt="img"> <!-- Sumber gambar -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- Akhir dari bagian Projects -->
+
+  <!-- End Projects Section -->
+
+  <!-- About Section -->
+  <!-- Mulai bagian tentang diri saya dengan ID "about" -->
+<section id="about">
+  <!-- Container untuk mengelompokkan elemen-elemen tentang saya -->
+  <div class="about container">
+    <!-- Kolom kiri untuk gambar profil -->
+    <div class="col-left">
+      <div class="about-img">
+        <!-- Gambar profil saya dengan atribut alt -->
+        <img src="./img/about me.jpg" alt="img">
+      </div>
+    </div>
+    <!-- Kolom kanan untuk informasi tentang saya -->
+    <div class="col-right">
+      <!-- Judul bagian "About me" -->
+      <h1 class="section-title">About <span>me</span></h1>
+      <!-- Paragraf yang berisi informasi tentang diri saya -->
+      <p>
+        Hai nama saya Althaffarel Noena Seta biasa dipanggil Arel. Saya adalah pelajar Smk Telkom Purwokerto dari kelas XI PPLG 6.
+        Saya masuk ke Smk Telkom Purwokerto di karenakan saya melanjutkan smp saya yang di telkom dan saya ingin belajar lebih tentang coding, desain, dll sehingga saya memilih jurusan RPL
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Selesai bagian tentang diri saya -->
+
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <!-- Bagian kontak dengan ID "contact" -->
+<section id="contact">
+  <!-- Container untuk mengelompokkan elemen-elemen kontak -->
+  <div class="contact container">
+    <!-- Judul bagian "Contact info" -->
+    <div>
+      <h1 class="section-title">Contact <span>info</span></h1>
+    </div>
+    <!-- Grup elemen-elemen informasi kontak -->
+    <div class="contact-items">
+      <!-- Elemen informasi kontak pertama: Nomor telepon -->
+      <div class="contact-item">
+        <!-- Ikon telepon -->
+        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+        <!-- Informasi tentang nomor telepon -->
+        <div class="contact-info">
+          <h1>Phone</h1>
+          <h2>+62 822 4340 0282</h2>
+          <h2>+62 822 4340 0282</h2>
+        </div>
+      </div>
+      <!-- Elemen informasi kontak kedua: Email -->
+      <div class="contact-item">
+        <!-- Ikon email -->
+        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+        <!-- Informasi tentang alamat email -->
+        <div class="contact-info">
+          <h1>Email</h1>
+          <h2>arelnoena@gmail.com</h2>
+          <h2>arelnoena@gmail.com</h2>
+        </div>
+      </div>
+      <!-- Elemen informasi kontak ketiga: Alamat -->
+      <div class="contact-item">
+        <!-- Ikon alamat -->
+        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+        <!-- Informasi tentang alamat -->
+        <div class="contact-info">
+          <h1>Address</h1>
+          <h2>Purwokerto</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Selesai bagian kontak -->
+
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <!-- Bagian footer dengan ID "footer" -->
+<section id="footer">
+  <!-- Container untuk mengelompokkan elemen-elemen footer -->
+  <div class="footer container">
+    <!-- Bagian merek atau brand -->
+    <div class="brand">
+      <!-- Judul merek atau brand -->
+      <h1><span>A</span>rel <span>Ga</span>nteng</h1>
+    </div>
+    <!-- Bagian ikon media sosial -->
+    <div class="social-icon">
+      <!-- Elemen ikon media sosial pertama: Facebook -->
+      <div class="social-item">
+        <!-- Tautan ke Facebook -->
+        <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+      </div>
+      <!-- Elemen ikon media sosial kedua: Instagram -->
+      <div class="social-item">
+        <!-- Tautan ke Instagram -->
+        <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+      </div>
+      <!-- Elemen ikon media sosial ketiga: Behance -->
+      <div class="social-item">
+        <!-- Tautan ke Behance -->
+        <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
+      </div>
+    </div>
+    <!-- Teks hak cipta -->
+    <p>Copyright © 2023 Arel. All rights reserved</p>
+  </div>
+</section>
+<!-- Selesai bagian footer -->
+
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+</body>
+
+</html>
